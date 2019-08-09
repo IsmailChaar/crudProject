@@ -1,0 +1,101 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Edit Product</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onFormSubmit()">
+    <div class="hidden">
+      <input type="text" formControlName="productId" placeholder="Id" name="productId" class="form-control" [value]="product.productId" id="id">
+    </div>
+    <div class="form-group">
+      <label for="label">Product Label:</label>
+      <input type="text" formControlName="label" placeholder="Label" name="label" class="form-control" [value]="product.label" id="label" >
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input formControlName="category" placeholder="Category" name="category" class="form-control" id="category">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input formControlName="price" placeholder="Price" name="price" class="form-control" id="price">
+    </div>
+
+    <div class="form-group">
+      <label for="expirationDate">Expiration Date:</label>
+      <input type="text" formControlName="expirationDate" placeholder="Expiration Date" name="expirationDate" class="form-control" id="expirationDate">
+    </div>
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+<!--
+
+
+<div class="col-md-6">
+<h2 class="text-center">Edit Product</h2>
+<form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+  <div class="form-group">
+    <label for="name">Label:</label>
+    <input type="name" [(ngModel)]="label" [ngModelOptions]="{standalone: true}" placeholder="Label" name="label" class="form-control" id="label">
+  </div>
+  <div class="form-group">
+    <label for="designation">Category:</label>
+    <input [(ngModel)]="category" [ngModelOptions]="{standalone: true}" placeholder="Category" name="category" class="form-control" id="category">
+  </div>
+  <div class="form-group">
+    <label for="empId">Price:</label>
+    <input [(ngModel)]="price" [ngModelOptions]="{standalone: true}" placeholder="Price" name="price" class="form-control" id="price">
+  </div>
+  <div class="form-group">
+    <label for="empId">Expiration Date:</label>
+    <input [(ngModel)]="expirationDate" [ngModelOptions]="{standalone: true}" placeholder="Expiration Date" name="expirationDate" class="form-control" id="expirationDate">
+  </div>
+  <button type = "submit" class="btn btn-success"> Save </button>
+</form>
+</div>
+
+
+
+
+
+<!--
+    <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Label" formControlName="label"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('label').valid && productForm.get('label').touched">Please enter Product Label</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Category" formControlName="category"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('category').valid && productForm.get('category').touched">Please enter Product Category</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Price" formControlName="price"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('price').valid && productForm.get('price').touched">Please enter Product Price</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Expiration Date" formControlName=""
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('expirationDate').valid && productForm.get('expirationDate').touched">Please enter Product Expiration Date</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!productForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+-->

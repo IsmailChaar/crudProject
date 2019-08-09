@@ -1,0 +1,5 @@
+ <p-tabView>
+    <p-tabPanel [header]="movie.movieTitle" *ngFor="let movie of movies; let i = index" [selected]="i == 0">
+        {{movie.movieStory}}
+    </p-tabPanel>
+</p-tabView> 

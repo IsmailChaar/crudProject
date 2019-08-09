@@ -1,0 +1,10 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveits >= 0,
+                'list-group-item-danger': loveits < 0}">
+       <h5 >{{lastUpdate | date}}</h5>
+  <h4 [ngStyle]="{color: getColor()}">Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="appareilStatus">
+  <button class="btn btn-success" (click)="onLike()"> Love it! </button>
+  <button class="btn btn-danger" (click)="onDislike()"> Don't love it! </button>
+  <h4> {{loveits}} </h4>
+</li>
